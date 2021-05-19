@@ -17,11 +17,11 @@ const app = new Vue({
     
     methods:{
         insertMessage: function(){
-            if('promemoria.length' > 2){
+            if(this.promemoria.length != ""){
                 this.tasks.push(this.promemoria);
                 this.promemoria = ''
             }else{
-                alert('Riprova con un testo piu lungo!');
+                alert('Devi inserire qualcosa!');
             }
         },
 
