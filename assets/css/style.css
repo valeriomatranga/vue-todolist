@@ -1,0 +1,60 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: ghostwhite;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+img{
+    margin: 40px;
+}
+
+i, button{
+    cursor: pointer;
+}
+
+i{
+    font-size: 1.5rem;
+    margin: 5px;
+}
+#app{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.tasks{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+}
+
+.todoList{
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list{
+    background-color: lavender;
+    padding: 0 10px;
+    border-radius: 5px;
+    width: 80%;
+}
+
+span{
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
