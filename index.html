@@ -22,8 +22,8 @@
                 <div class="list" v-if='tasks.length > 0'>
                     <div v-on:clik='modifica' class="tasks" v-for='(task,index) in tasks'>{{task}}
                         <div>
-                        <i class="far fa-check-circle"></i>
-                        <i v-on:click='remove(index)' class="fas fa-minus"></i>
+                            <i class="far fa-check-circle"></i>
+                            <i v-on:click='remove(index)' class="fas fa-minus"></i>
                         </div>
                     </div>
                 </div>
