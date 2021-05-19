@@ -1,6 +1,7 @@
 const app = new Vue({
     el:'#app',
 
+
     data:{
         promemoria: "",
         tasks:[
@@ -15,9 +16,14 @@ const app = new Vue({
             this.tasks.push(this.promemoria);
         },
 
-        remove: function(){
-            this.task.splice(index,1);
+        remove: function(index){
+            this.tasks.splice(index,1);
+        },
+
+        modifica: function(){
+            this.tasks.
         }
+
     }
     
 })

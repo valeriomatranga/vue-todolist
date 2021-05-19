@@ -19,13 +19,16 @@
           <button v-on:click='insertMessage'>Aggiungi</button>
             <div class="todoList">
                 <span>Lista</span>
-                <div class="list">
-                    <div class="tasks" v-for='(task,index) in tasks'>{{task}}
+                <div class="list" v-if='tasks.length > 0'>
+                    <div v-on:clik='modifica' class="tasks" v-for='(task,index) in tasks'>{{task}}
                         <div>
                         <i class="far fa-check-circle"></i>
-                        <i v-on:click='remove' class="fas fa-minus"></i>
+                        <i v-on:click='remove(index)' class="fas fa-minus"></i>
                         </div>
                     </div>
+                </div>
+                <div v-else='tasks.length === 0'>
+                    <span> niente da fare!</span>
                 </div>
             </div>
       </div>
