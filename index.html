@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- style css -->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+    .green{
+    color: green;
+    }
+    </style>
   </head>
   <body>
       <img width="200px" src="./assets/img/remainder.png" alt="">
@@ -20,9 +25,10 @@
             <div class="todoList">
                 <span>Lista</span>
                 <div class="list" v-if='tasks.length > 0'>
-                    <div class="tasks" v-for='(task,index) in tasks'>{{task}}
+                    <div class="tasks" v-for='(task,index) in tasks'>
+                        <input v-model="tasks[index]" v-text="task">
                         <div>
-                            <i class="far fa-check-circle"></i>
+                            <i :class="status" v-on:click='complete(index)' class="far fa-check-circle"></i>
                             <i v-on:click='remove(index)' class="fas fa-minus"></i>
                         </div>
                     </div>

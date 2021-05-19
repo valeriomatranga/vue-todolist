@@ -35,9 +35,14 @@ i{
     height: 40px;
 }
 
+.tasks > input{
+    border: 0;
+    background-color: transparent;
+}
+
 .todoList{
     background-color: white;
-    width: 300px;
+    width: 350px;
     height: 300px;
     border-radius: 5px;
     margin: 30px;
@@ -58,3 +63,4 @@ span{
     text-transform: uppercase;
     font-weight: 600;
 }
+

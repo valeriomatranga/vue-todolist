@@ -3,6 +3,7 @@ const app = new Vue({
 
 
     data:{
+        status: "incomplete",
         promemoria: "",
         tasks:[
             'prendere le chiavi',
@@ -20,7 +21,11 @@ const app = new Vue({
             this.tasks.splice(index,1);
         },
 
-
+        complete: function(index){
+            if(this.status === 'incomplete'){
+                this.status = 'green'
+            }
+        }
     }
     
 })
