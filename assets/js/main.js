@@ -17,7 +17,12 @@ const app = new Vue({
     
     methods:{
         insertMessage: function(){
-            this.tasks.push(this.promemoria);
+            if('promemoria.length' > 2){
+                this.tasks.push(this.promemoria);
+                this.promemoria = ''
+            }else{
+                alert('Riprova con un testo piu lungo!');
+            }
         },
 
         remove: function(index){
@@ -28,7 +33,13 @@ const app = new Vue({
         complete: function(index){
             this.completeTasks.push(this.tasks[index])
             
+        },
+
+        restore: function(index){
+            this.tasks.push(this.deletTasks[index])
+            this.deletTasks.splice(index,1);
         }
+
     },
 
     mounted(){

@@ -19,31 +19,44 @@
   </head>
   <body>
       <img width="200px" src="./assets/img/remainder.png" alt="">
-      <div id="app">
+        <div id="app">
           <input v-model='promemoria' placeholder="inserisci promemoria">
           <button v-on:click='insertMessage'>Aggiungi</button>
-            <div class="todoList">
-                <span>Lista</span>
-                <div class="list" v-if='tasks.length > 0'>
-                    <div class="tasks" v-for='(task,index) in tasks'>
-                        <input v-model="tasks[index]" v-text="task">
-                        <div>
-                            <i :class="status" v-on:click='complete(index)' class="far fa-check-circle"></i>
-                            <i v-on:click='remove(index)' class="fas fa-minus"></i>
+            <div class="section">
+                <div class="todoList">
+
+                    <span>Lista</span>
+                    <div class="list" v-if='tasks.length > 0'>
+                        <div class="tasks" v-for='(task,index) in tasks'>
+                            <input v-model="tasks[index]" v-text="task">
+                            <div>
+                                <i :class="status" v-on:click='complete(index)' class="far fa-check-circle"></i>
+                                <i v-on:click='remove(index)' class="fas fa-minus"></i>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div v-else='tasks.length === 0'>
-                    <span> niente da fare!</span>
-                </div>
-                <div class="deletTasks" v-for='(deletTask,index) in deletTasks'>
-                    <input v-model="deletTasks[index]" v-text="deletTask">
-                    <div>
-                        <i :class="status" v-on:click='complete(index)' class="far fa-check-circle"></i>
+
+                    <div v-else='tasks.length === 0'>
+                        <span> Niente da fare!</span>
                     </div>
+
                 </div>
-            </div>
-      </div>
+
+                <div v-if='deletTasks.length > 0'>
+
+                    <div class="deletList">
+                        <span>cancellati</span>
+                        <div class="deletTasks" v-for='(deletTask,index) in deletTasks'>
+                            <input v-model="deletTasks[index]" v-text="deletTask">
+                            <div>
+                                <i v-on:click='restore(index)' class="fas fa-trash-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>  
+        </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="./assets/js/main.js"></script>
   </body>
