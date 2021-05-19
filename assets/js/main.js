@@ -9,7 +9,10 @@ const app = new Vue({
             'prendere le chiavi',
             'fare la spesa',
             'pagare le bollette'
-        ]
+        ],
+        deletTasks:[],
+        completeTasks:[],
+
     },
     
     methods:{
@@ -18,14 +21,24 @@ const app = new Vue({
         },
 
         remove: function(index){
+            this.deletTasks.push(this.tasks[index])
             this.tasks.splice(index,1);
         },
 
         complete: function(index){
-            if(this.status === 'incomplete'){
-                this.status = 'green'
-            }
+            this.completeTasks.push(this.tasks[index])
+            
         }
+    },
+
+    mounted(){
+        document.addEventListener('keyup', (e) =>{
+            let tasto = e.key;
+            //console.log(tasto);
+            if(tasto === 'Enter'){
+                this.insertMessage()
+            }
+        })
     }
     
 })
