@@ -20,9 +20,6 @@ const app = new Vue({
             this.tasks.splice(index,1);
         },
 
-        modifica: function(){
-            this.tasks.
-        }
 
     }
     
