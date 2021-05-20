@@ -47,8 +47,15 @@ i{
     background-color: transparent;
 }
 
+.completeTasks > input{
+    border: 0;
+    background-color: transparent;
+
+}
+
 .todoList,
-.deletList{
+.deletList,
+.completeList{
     background-color: white;
     width: 350px;
     height: 300px;
@@ -65,8 +72,16 @@ i{
     padding: 5px;
 }
 
+.completeList .completTasks{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+
+}
+
 .list,
-.deletTasks{
+.deletTasks,
+.completeTasks{
     background-color: lavender;
     padding: 0 10px;
     width: 80%;

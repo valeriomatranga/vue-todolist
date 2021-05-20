@@ -46,6 +46,7 @@
 
                     <div class="deletList">
                         <span>cancellati</span>
+                        <button @click='delet'>Cancella tutto</button>
                         <div class="deletTasks" v-for='(deletTask,index) in deletTasks'>
                             <input v-model="deletTasks[index]" v-text="deletTask">
                             <div>
@@ -55,6 +56,21 @@
                     </div>
 
                 </div>
+
+                <div v-if='completeTasks.length > 0'>
+                
+                    <div class="completeList">
+                        <span>completati</span>
+                        <div class="completTasks" v-for='(completeTask,index) in completeTasks'>
+                            <input v-model="completeTasks[index]" v-text="completeTask">
+                            <div>
+                                <i v-on:click='restore(index)' class="fas fa-trash-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+
             </div>  
         </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
